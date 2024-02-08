@@ -17,6 +17,8 @@ jobs:
         steps:
             # - name: Print context
             #   run: echo ${{ toJson(github) }}
+            - name: Use python
+              run: python -c 'print("hello there")'
             - name: Print branch
               run: echo ${{ github.ref_name }}
             - name: Print user
