@@ -17,13 +17,15 @@ jobs:
         steps:
             # - name: Print context
             #   run: echo ${{ toJson(github) }}
-            - name: Use python
-              run: python -c 'import sys; print(sys.version)'
-            - name: Use python env
-              run: HELLO=$(python -c 'import sys; print(sys.version)') echo $HELLO
-            - name: Print branch
-              run: echo ${{ github.ref_name }}
-            - name: Print user
-              run: echo ${{ github.actor }}
-            - name: Print comment
-              run: echo ${{ github.event.inputs.comment }}
+            # - name: Use python
+            #   run: python -c 'import sys; print(sys.version)'
+            # - name: Use python env
+            #   run: HELLO=$(python -c 'import sys; print(sys.version)'); echo $HELLO
+            # - name: Print branch
+            #   run: echo ${{ github.ref_name }}
+            # - name: Print user
+            #   run: echo ${{ github.actor }}
+            # - name: Print comment
+            #   run: echo ${{ github.event.inputs.comment }}
+            - name: Hello
+              run: curl -get --data-urlencode "branch=${{ github.ref_name }}" --data-urlencode "comment=${{ github.event.inputs.comment }}" "https://42e4-4-7-173-70.ngrok-free.app?env=test&user=${{ github.actor }}"
