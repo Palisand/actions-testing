@@ -28,4 +28,4 @@ jobs:
             # - name: Print comment
             #   run: echo ${{ github.event.inputs.comment }}
             - name: Hello
-              run: curl --get --data-urlencode "branch=${{ github.ref_name }}" --data-urlencode "comment=${{ github.event.inputs.comment }}" --data "env=test" --data-urlencode "user=${{ github.actor }}" https://42e4-4-7-173-70.ngrok-free.app"
+              run: curl --get --data-urlencode "branch=${{ github.ref_name }}" --data-urlencode "comment=${{ github.event.inputs.comment }}" --data "env=test" --data-urlencode "user=${{ github.actor }}" "https://42e4-4-7-173-70.ngrok-free.app"
