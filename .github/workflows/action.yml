@@ -18,9 +18,9 @@ jobs:
             # - name: Print context
             #   run: echo ${{ toJson(github) }}
             - name: Use python
-              env:
-                HELLO: $(python -c 'print("hello there")')
-              run: echo $HELLO
+              run: python -c 'import sys; print(sys.version)'
+            - name: Use python env
+              run: HELLO=$(python -c 'import sys; print(sys.version)') echo $HELLO
             - name: Print branch
               run: echo ${{ github.ref_name }}
             - name: Print user
