@@ -16,7 +16,7 @@ jobs:
 
         steps:
             - name: Print branch
-              run: echo $GITHUB_HEAD_REF
+              run: echo ${{ toJson(github) }}
             - name: Print user
               run: echo ${{ github.actor }}
             - name: Print comment
