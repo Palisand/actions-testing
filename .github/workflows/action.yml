@@ -15,8 +15,8 @@ jobs:
             fail-fast: true
 
         steps:
-            - name: Print context
-              run: echo ${{ toJson(github) }}
+            # - name: Print context
+            #   run: echo ${{ toJson(github) }}
             - name: Print branch
               run: echo ${{ github.ref_name }}
             - name: Print user
