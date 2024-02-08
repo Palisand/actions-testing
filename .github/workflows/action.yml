@@ -19,7 +19,7 @@ jobs:
             #   run: echo ${{ toJson(github) }}
             - name: Use python
               env:
-                HELLO: python -c 'print("hello there")'
+                HELLO: $(python -c 'print("hello there")')
               run: echo $HELLO
             - name: Print branch
               run: echo ${{ github.ref_name }}
