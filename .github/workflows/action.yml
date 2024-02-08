@@ -1,0 +1,23 @@
+name: Run action
+
+on:
+  workflow_dispatch:
+    inputs:
+      comment:
+        description: 'Comment'
+        required: true
+
+jobs:
+    blah:
+        runs-on: ubuntu-20.04
+
+        strategy:
+            fail-fast: true
+
+        steps:
+            - name: Print branch
+              run: echo $GITHUB_HEAD_REF
+            - name: Print user
+              run: echo ${{ github.actor }}
+            - name: Print comment
+              run: echo ${{ github.event.inputs.comment }}
